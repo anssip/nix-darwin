@@ -3,10 +3,10 @@
 {
   # import sub modules
   imports = [
+    ./programs.nix
     ./shell.nix
-#    ./core.nix
+    ./kitty.nix
     ./git.nix
-#    ./starship.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -28,4 +28,5 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 }
