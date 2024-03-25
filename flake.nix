@@ -36,6 +36,8 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+
+    passlane.url = "github:anssip/passlane";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -48,16 +50,19 @@
     nixpkgs,
     darwin,
     home-manager,
+    passlane,
     ...
   }: let
     username = "anssi";
     system = "aarch64-darwin";
 
     hostname = "anssis-macmini";
+    # Overrride some attributes of inputs and set to the specialArgs variable
     specialArgs =
       inputs
       // {
         inherit username hostname;
+        inherit passlane;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
@@ -78,7 +83,6 @@
           home-manager.users.${username} = import ./home;
         }
       ];
-
     };
     # nix code formatter
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, passlane, ... }:
 
 {
   home.packages = with pkgs; [
@@ -24,6 +24,8 @@
 
     # productivity
     glow # markdown previewer in terminal
+
+    passlane.packages.${system}.default
   ];
 
   programs = {
