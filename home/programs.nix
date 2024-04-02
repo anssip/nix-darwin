@@ -25,6 +25,9 @@
     # productivity
     glow # markdown previewer in terminal
 
+    # Rust
+    rustup
+
     passlane.packages.${system}.default
   ];
 
