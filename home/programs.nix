@@ -28,6 +28,9 @@
     # Rust
     rustup
 
+    # pnpm
+    nodePackages.pnpm
+
     passlane.packages.${system}.default
   ];
 
