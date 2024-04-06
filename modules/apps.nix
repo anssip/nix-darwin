@@ -41,15 +41,14 @@
     ];
 
     # `brew install`
-    # TODO Feel free to add your favorite apps here.
     brews = [
-      # "aria2"  # download tool
+      "flyctl" # fly.io CLI
+      "libpq" # PostgreSQL client
     ];
 
     # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
     casks = [
-      # "google-chrome"
+        "docker"
     ];
   };
 }

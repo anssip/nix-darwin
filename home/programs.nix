@@ -21,6 +21,7 @@
     tree
     wget
     curl
+    auth0-cli
 
     # productivity
     glow # markdown previewer in terminal
