@@ -43,12 +43,12 @@
     # `brew install`
     brews = [
       "flyctl" # fly.io CLI
-      "libpq" # PostgreSQL client
     ];
 
     # `brew install --cask`
     casks = [
         "docker"
+        "keepassxc"
     ];
   };
 }
