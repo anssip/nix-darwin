@@ -27,7 +27,7 @@
         FXPreferredViewStyle = "clmv";
       };
       loginwindow = {
-        LoginwindowText = "Norhern Peaks Mac Mini";
+        LoginwindowText = "Anssi's Mac";
         GuestEnabled = false;
         SHOWFULLNAME = true;
       };
