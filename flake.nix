@@ -37,17 +37,11 @@
     passlane,
     ...
   }: let
-    username = let
-      envHostname = builtins.getEnv "USER";
-    in if envHostname == "" then "anssipiirainen" else envHostname;
-
     system = "aarch64-darwin";
+    username = "anssi";
+    hostname = "anssis-macmini";
+#    hostname = "SF-RXKNY4KQJF";
 
-    # Fetch the hostname from the environment with a fallback to a default value
-    hostname = let
-      envHostname = builtins.getEnv "HOSTNAME";
-    in if envHostname == "" then "SF-RXKNY4KQJF" else envHostname;
-    # Override some attributes of inputs and set to the specialArgs variable
     specialArgs =
       inputs
       // {

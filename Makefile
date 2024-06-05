@@ -1,8 +1,5 @@
 deploy:
-	nix build .#darwinConfigurations.anssis-macmini.system \
-	   --extra-experimental-features 'nix-command flakes'
-
-	./result/sw/bin/darwin-rebuild switch --flake .#anssis-macmini
+	nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --show-trace --flake .
 
 deploy-mb:
 	nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --flake .
