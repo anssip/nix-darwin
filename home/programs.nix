@@ -22,6 +22,7 @@
     wget
     curl
     auth0-cli
+    php
 
     # productivity
     glow # markdown previewer in terminal
