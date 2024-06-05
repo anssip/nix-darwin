@@ -33,7 +33,7 @@
     # pnpm
     nodePackages.pnpm
 
-    passlane.packages.${system}.default
+    # passlane.packages.${system}.default
   ];
 
   programs = {
