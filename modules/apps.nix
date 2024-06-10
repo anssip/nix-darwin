@@ -41,6 +41,7 @@
     # `brew install`
     brews = [
       "flyctl" # fly.io CLI
+      "gh" # Github CLI
     ];
 
     # `brew install --cask`

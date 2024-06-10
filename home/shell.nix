@@ -16,7 +16,7 @@
     };
     initExtra = ''
       export NVM_DIR="$HOME/.nvm"
-      export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin/"
+      export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:/Users/anssipiirainen/bin"
       export JAVA_HOME=/Applications/jdk-22.0.1.jdk/Contents/Home/
 
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

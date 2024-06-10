@@ -48,7 +48,7 @@
         inherit passlane;
       };
   in {
-    darwinConfigurations."${hostname}-2" = darwin.lib.darwinSystem {
+    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
         ../../modules/nix-core.nix
