@@ -42,6 +42,7 @@
     brews = [
       "flyctl" # fly.io CLI
       "gh" # Github CLI
+      "php@8.2"
     ];
 
     # `brew install --cask`

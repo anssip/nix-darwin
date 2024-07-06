@@ -22,7 +22,6 @@
     wget
     curl
     auth0-cli
-    php
 
     # productivity
     glow # markdown previewer in terminal
@@ -30,10 +29,9 @@
     # Rust
     rustup
 
-    # pnpm
     nodePackages.pnpm
-
-    #passlane.packages.${system}.default
+    nodePackages.prettier
+    php83Packages.composer
   ];
 
   programs = {

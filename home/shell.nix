@@ -19,6 +19,8 @@
       export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:/Users/anssipiirainen/bin"
       export JAVA_HOME=/Applications/jdk-22.0.1.jdk/Contents/Home/
 
+      alias vapor="php /Users/anssipiirainen/Documents/projects/php/easyconferencing/vendor/bin/vapor"
+
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     '';
