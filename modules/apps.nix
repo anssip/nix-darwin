@@ -49,6 +49,7 @@
     casks = [
         "docker"
         "keepassxc"
+        "google-cloud-sdk"
     ];
   };
 }

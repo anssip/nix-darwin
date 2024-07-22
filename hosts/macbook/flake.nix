@@ -56,6 +56,7 @@
         ../../modules/apps.nix
 
         ../../modules/host-users.nix
+        ../../modules/networking.nix
 
         # home manager
         home-manager.darwinModules.home-manager
