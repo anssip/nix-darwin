@@ -16,7 +16,7 @@
     };
     initExtra = ''
       export NVM_DIR="$HOME/.nvm"
-      export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:/Users/anssipiirainen/bin"
+      export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin"
       export JAVA_HOME=/Applications/jdk-22.0.1.jdk/Contents/Home/
 
       alias vapor="php /Users/anssipiirainen/Documents/projects/php/easyconferencing/vendor/bin/vapor"
