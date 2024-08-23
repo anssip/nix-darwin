@@ -21,6 +21,9 @@
 
       alias vapor="php /Users/anssipiirainen/Documents/projects/php/easyconferencing/vendor/bin/vapor"
 
+      export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
+      export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
+
       [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     '';
