@@ -32,6 +32,8 @@
     nodePackages.pnpm
     nodePackages.prettier
     php83Packages.composer
+
+    pyenv
   ];
 
   programs = {
