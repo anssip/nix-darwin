@@ -20,7 +20,7 @@
       export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin:$HOME/.pyenv/bin"
       export JAVA_HOME=/Applications/jdk-22.0.1.jdk/Contents/Home/
 
-      alias vapor="php /Users/anssipiirainen/Documents/projects/php/easyconferencing/vendor/bin/vapor"
+      alias vapor="php $HOME/projects/easyconferencing/vendor/bin/vapor"
 
       export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
       export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"
