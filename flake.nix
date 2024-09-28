@@ -39,7 +39,7 @@
   }: let
     system = "aarch64-darwin";
     username = "anssi";
-    hostname = "anssis-macmini";
+    hostname = "anssis-macmini-2";
 #    hostname = "SF-RXKNY4KQJF";
 
     specialArgs =

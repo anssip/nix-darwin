@@ -50,7 +50,6 @@
         "docker"
         "keepassxc"
         "google-cloud-sdk"
-        "warp"
     ];
   };
 }
