@@ -5,8 +5,8 @@
   imports = [
     ./programs.nix
     ./shell.nix
-    ./kitty.nix
     ./git.nix
+    ./ghostty.nix
   ];
 
   # Home Manager needs a bit of information about you and the

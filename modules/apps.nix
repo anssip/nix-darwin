@@ -50,6 +50,7 @@
         "docker"
         "keepassxc"
         "google-cloud-sdk"
+        "ghostty"
     ];
   };
 }

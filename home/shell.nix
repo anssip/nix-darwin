@@ -14,7 +14,7 @@
         "deno"
       ];
     };
-    initExtra = ''
+    initContent = ''
       export NVM_DIR="$HOME/.nvm"
       export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin"
       export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin:$HOME/.pyenv/bin"

@@ -30,7 +30,7 @@
     rustup
 
     nodePackages.pnpm
-    nodePackages.prettier
+    (pkgs.hiPrio nodePackages.prettier)
     php83Packages.composer
 
     pyenv
