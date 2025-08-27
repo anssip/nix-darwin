@@ -17,7 +17,7 @@
 
     # macos-titlebar-style = hidden
     # macos-titlebar-proxy-icon = hidden
-    macos-option-as-alt = true
+    # macos-option-as-alt = true
 
     copy-on-select = clipboard
     shell-integration-features = cursor,sudo,no-title
