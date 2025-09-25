@@ -4,12 +4,12 @@
     # ghostty +show-config --default --docs | nvim
 
     # font-family = JuliaMono
-    font-family = Comic Code Ligatures
-    font-size = 15
+    font-family = UbuntuMono Nerd Font Mono
+    font-size = 18
 
     # ghostty +list-theme
-    # theme = rose-pine
-    theme = catppuccin-frappe
+    theme = Kolorit
+    # theme = catppuccin-frappe
     # theme = iceberg-dark
     # theme = Dracula
 
@@ -25,5 +25,8 @@
     # enable transparency
     background-opacity = 0.80
     background-blur = true
+
+    keybind = shift+enter=text:\n
+    keybind = alt+2=text:@
   '';
 }
