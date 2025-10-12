@@ -22,6 +22,7 @@
     wget
     curl
     bun
+    yarn
 
     # productivity
     glow # markdown previewer in terminal
