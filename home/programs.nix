@@ -34,6 +34,9 @@
     php83Packages.composer
 
     pyenv
+
+    # database tools
+    postgresql
   ];
 
   programs = {
