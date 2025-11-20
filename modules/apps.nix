@@ -44,6 +44,7 @@
       "gh" # Github CLI
       "php@8.2"
       "firebase-cli"
+      "gemini-cli"
     ];
 
     # `brew install --cask`

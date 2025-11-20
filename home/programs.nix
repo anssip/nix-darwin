@@ -23,6 +23,7 @@
     curl
     bun
     yarn
+    postgresql # PostgreSQL client utilities including psql
 
     # productivity
     glow # markdown previewer in terminal
