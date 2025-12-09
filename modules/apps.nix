@@ -45,6 +45,7 @@
       "php@8.2"
       "firebase-cli"
       "gemini-cli"
+      "go"
     ];
 
     # `brew install --cask`
