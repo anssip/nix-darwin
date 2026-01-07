@@ -31,6 +31,9 @@
     # Rust
     rustup
 
+    # Go
+    go
+
     nodePackages.pnpm
     (pkgs.hiPrio nodePackages.prettier)
     php83Packages.composer
