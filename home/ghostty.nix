@@ -28,5 +28,9 @@
 
     keybind = shift+enter=text:\n
     keybind = alt+2=text:@
+
+    # Split terminal borders
+    split-divider-color = #6272a4
+    unfocused-split-opacity = 0.85
   '';
 }

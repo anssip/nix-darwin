@@ -36,15 +36,21 @@
 
     taps = [
       "homebrew/services"
+      "railwaycat/emacsmacport"
     ];
 
     # `brew install`
     brews = [
+      "cmake"
       "flyctl" # fly.io CLI
       "gh" # Github CLI
       "php@8.2"
       "firebase-cli"
       "gemini-cli"
+      {
+        name = "railwaycat/emacsmacport/emacs-mac";
+        args = ["with-native-comp" "with-imagemagick" "with-xwidgets"];
+      }
     ];
 
     # `brew install --cask`
