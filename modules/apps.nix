@@ -43,6 +43,7 @@
     brews = [
       "cmake"
       "flyctl" # fly.io CLI
+      "terraform"
       "gh" # Github CLI
       "php@8.2"
       "firebase-cli"
