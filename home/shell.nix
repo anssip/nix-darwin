@@ -33,6 +33,8 @@
       [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
       eval "$(pyenv init -)"
+
+      source "$HOME/.passlane/completions.zsh"
     '';
   };
 
