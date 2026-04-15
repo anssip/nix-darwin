@@ -53,6 +53,7 @@
         ../../modules/nix-core.nix
         ../../modules/system.nix
         ../../modules/apps.nix
+        ../../modules/tailscale.nix
 
         ../../modules/host-users.nix
         ../../modules/networking.nix

@@ -54,6 +54,8 @@
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix
+        ./modules/tailscale.nix
+        ./modules/remote-access.nix
 
         ./modules/host-users.nix
 
