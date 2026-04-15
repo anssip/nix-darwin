@@ -3,3 +3,6 @@ deploy:
 
 deploy-mb:
 	sudo nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --flake ./hosts/macbook
+
+deploy-neo:
+	sudo nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --flake ./hosts/macbook-neo

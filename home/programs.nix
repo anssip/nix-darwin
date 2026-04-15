@@ -1,4 +1,4 @@
-{ pkgs, passlane, ... }:
+{ pkgs, lib, passlane, lite ? false, ... }:
 
 {
   home.packages = with pkgs; [
@@ -26,13 +26,9 @@
     curl
     bun
     yarn
-    postgresql # PostgreSQL client utilities including psql
 
     # productivity
     glow # markdown previewer in terminal
-
-    # Rust
-    rustup
 
     # Go
     go
@@ -42,9 +38,12 @@
     php83Packages.composer
 
     pyenv
+  ] ++ lib.optionals (!lite) [
+    # Rust
+    rustup
 
     # database tools
-    postgresql
+    postgresql # PostgreSQL client utilities including psql
   ];
 
   programs = {

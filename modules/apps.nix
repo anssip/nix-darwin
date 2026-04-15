@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, lib, lite ? false, ...}: {
 
   ##########################################################################
   #
@@ -7,24 +7,15 @@
   #  NOTE: Your can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
   #
-  # TODO Fell free to modify this file to fit your needs.
+  #  Heavy items are gated on `!lite` so lightweight hosts (e.g. macbook-neo)
+  #  can opt out via `lite = true` in their flake's specialArgs.
   #
   ##########################################################################
 
-  # Install packages from nix's official package repository.
-  #
-  # The packages installed here are available to all users, and are reproducible across machines, and are rollbackable.
-  # But on macOS, it's less stable than homebrew.
-  #
-  # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
     git
   ];
 
-  # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
-  #
-  # The apps installed by homebrew are not managed by nix, and not reproducible!
-  # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
     enable = true;
 
@@ -39,27 +30,27 @@
       "railwaycat/emacsmacport"
     ];
 
-    # `brew install`
     brews = [
       "cmake"
       "flyctl" # fly.io CLI
-      "terraform"
       "gh" # Github CLI
-      "php@8.2"
       "firebase-cli"
       "gemini-cli"
+    ] ++ lib.optionals (!lite) [
+      "terraform"
+      "php@8.2"
       {
         name = "railwaycat/emacsmacport/emacs-mac";
         args = ["with-native-comp" "with-imagemagick" "with-xwidgets"];
       }
     ];
 
-    # `brew install --cask`
     casks = [
-        "docker"
-        "keepassxc"
-        "google-cloud-sdk"
-        "ghostty"
+      "keepassxc"
+      "google-cloud-sdk"
+      "ghostty"
+    ] ++ lib.optionals (!lite) [
+      "docker"
     ];
   };
 }
