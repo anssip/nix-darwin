@@ -1,4 +1,4 @@
-{ username, ... }:
+{ pkgs, username, ... }:
 
 {
   # import sub modules
@@ -24,6 +24,12 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "23.11";
+
+    # Populate ~/.terminfo so ncurses finds xterm-ghostty without needing
+    # TERMINFO_DIRS to be set — zsh initialises terminfo before /etc/zshenv
+    # runs, so the system-wide install at /run/current-system/sw/share/terminfo
+    # isn't visible during that early lookup.
+    file.".terminfo".source = "${pkgs.ghostty-bin.terminfo}/share/terminfo";
   };
 
   # Let Home Manager install and manage itself.
