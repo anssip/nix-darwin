@@ -1,35 +1,22 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 ###################################################################################
 #
 #  Tailscale daemon (CLI).
 #
-#  Installs `tailscale` + `tailscaled` and runs the daemon as a root LaunchDaemon.
-#  Run `sudo tailscale up` once per machine to authenticate into the tailnet.
+#  Uses nix-darwin's `services.tailscale` module, which installs the package,
+#  runs `tailscaled` as a LaunchDaemon, and wires up `/etc/resolver/ts.net`
+#  so MagicDNS FQDNs (e.g. `host.<tailnet>.ts.net`) resolve without needing
+#  "Override local DNS" in the admin panel.
+#
+#  After deploying for the first time, run `sudo tailscale up` once per machine
+#  to authenticate into the tailnet.
+#
+#  Short hostnames (e.g. `anssis-macmini-2`) still require MagicDNS to be
+#  enabled in the Tailscale admin console (DNS tab).
 #
 ###################################################################################
 
 {
-  environment.systemPackages = with pkgs; [ tailscale ];
-
-  system.activationScripts.preActivation.text = lib.mkAfter ''
-    mkdir -p /var/lib/tailscale
-    chmod 700 /var/lib/tailscale
-  '';
-
-  launchd.daemons.tailscaled = {
-    serviceConfig = {
-      Label = "com.tailscale.tailscaled";
-      ProgramArguments = [
-        "${pkgs.tailscale}/bin/tailscaled"
-        "--state=/var/lib/tailscale/tailscaled.state"
-        "--socket=/var/run/tailscaled.socket"
-        "--port=41641"
-      ];
-      RunAtLoad = true;
-      KeepAlive = true;
-      StandardOutPath = "/var/log/tailscaled.log";
-      StandardErrorPath = "/var/log/tailscaled.log";
-    };
-  };
+  services.tailscale.enable = true;
 }
