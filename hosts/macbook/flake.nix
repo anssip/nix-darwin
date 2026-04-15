@@ -39,11 +39,12 @@
     system = "aarch64-darwin";
     username = "anssipiirainen";
     hostname = "SF-RXKNY4KQJF";
+    lite = false;
 
     specialArgs =
       inputs
       // {
-        inherit username hostname;
+        inherit username hostname lite;
         inherit passlane;
       };
   in {
