@@ -33,8 +33,8 @@
     # Go
     go
 
-    nodePackages.pnpm
-    (pkgs.hiPrio nodePackages.prettier)
+    pnpm
+    (pkgs.hiPrio prettier)
     php83Packages.composer
 
     pyenv

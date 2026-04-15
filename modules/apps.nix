@@ -26,7 +26,6 @@
     };
 
     taps = [
-      "homebrew/services"
       "railwaycat/emacsmacport"
     ];
 
