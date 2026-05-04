@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, username, lib, ... }:
 
 {
   # import sub modules
@@ -30,6 +30,10 @@
     # runs, so the system-wide install at /run/current-system/sw/share/terminfo
     # isn't visible during that early lookup.
     file.".terminfo".source = "${pkgs.ghostty-bin.terminfo}/share/terminfo";
+
+    sessionVariables = {
+      EDITOR = lib.mkForce "cot --wait";
+    };
   };
 
   # Let Home Manager install and manage itself.

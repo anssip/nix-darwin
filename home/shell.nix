@@ -37,6 +37,12 @@
       eval "$(pyenv init -)"
 
       source "$HOME/.passlane/completions.zsh"
+
+      # forge zsh integration (equivalent to `forge zsh setup`)
+      if command -v forge >/dev/null 2>&1; then
+        eval "$(forge zsh plugin)"
+        eval "$(forge zsh theme)"
+      fi
     '';
   };
 
