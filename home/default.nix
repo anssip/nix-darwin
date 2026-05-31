@@ -37,6 +37,14 @@
     };
   };
 
+  # Don't build the Home Manager options-reference manpage. Generating it
+  # forces evaluation of every option's default, and on the current
+  # HM 25.11 / Nixpkgs 26.05 combo one of those defaults
+  # (i18n.inputMethod.fcitx5 -> pkgs.libsForQt5.fcitx5-with-addons) points at
+  # a package that was renamed, which breaks `make deploy`. We never use the
+  # generated manpage, so skip it.
+  manual.manpages.enable = false;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
