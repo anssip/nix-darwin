@@ -16,9 +16,12 @@
     enable = true;
 
     matchBlocks = {
-      # Friendly alias for the mini over the tailnet (MagicDNS short name).
+      # Friendly alias for the mini over the tailnet. Use the full MagicDNS
+      # FQDN: it resolves via /etc/resolver/ts.net regardless of search-domain
+      # config. Note the tailnet node name is `anssis-macmini` (the system
+      # hostname is `anssis-macmini-2`, but it joined the tailnet as the former).
       "mini" = {
-        hostname = "anssis-macmini-2";
+        hostname = "anssis-macmini.tailcb0f0e.ts.net";
 
         # Send a keepalive every 60s; give up only after ~5 missed replies.
         # This keeps idle sessions alive across NAT/router/Tailscale timeouts.
