@@ -17,6 +17,12 @@
     # terminal multiplexer
     tmux
 
+    # mobile shell: SSH replacement whose UDP session survives idle, sleep,
+    # and network changes, so connections to the mini resume without
+    # re-establishing them by hand. Installed on both ends (shared module),
+    # which is required: `mosh` needs `mosh-server` present on the remote.
+    mosh
+
     # misc
     cowsay
     file
