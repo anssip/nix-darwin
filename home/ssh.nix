@@ -27,10 +27,14 @@
 
         # Reuse a single TCP connection for additional sessions, and keep the
         # master open for 10 min after the last session closes so reconnects
-        # are instant.
-        controlMaster = "auto";
-        controlPath = "~/.ssh/control-%r@%h:%p";
-        controlPersist = "10m";
+        # are instant. Passed as raw ssh_config keys via extraOptions so this
+        # works across home-manager versions (the named controlMaster options
+        # don't exist in the older home-manager the root flake pins).
+        extraOptions = {
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/control-%r@%h:%p";
+          ControlPersist = "10m";
+        };
       };
     };
   };
