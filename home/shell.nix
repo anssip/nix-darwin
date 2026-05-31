@@ -48,6 +48,11 @@
 
   home.shellAliases = {
     ll = "ls -alh";
+
+    # mosh into the mini and attach (or create) a persistent tmux session,
+    # so work survives disconnects/sleep. Plain `mosh mini` / `ssh mini`
+    # remain untouched.
+    mm = "mosh mini -- tmux new -A -s main";
   };
 
 }
