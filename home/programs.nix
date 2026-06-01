@@ -57,6 +57,17 @@
     tmux = {
       enable = true;
       mouse = true;
+      extraConfig = ''
+        # Send copy-mode selections to the macOS clipboard via pbcopy.
+        # Mouse drag-release copies and exits copy-mode; keyboard copy
+        # (Enter in emacs mode, y in vi mode) does the same. Bound in both
+        # copy-mode tables so it works regardless of keyMode. pbcopy works
+        # directly on modern macOS/tmux (no reattach-to-user-namespace).
+        bind-key -T copy-mode    MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
+        bind-key -T copy-mode    Enter             send-keys -X copy-pipe-and-cancel "pbcopy"
+        bind-key -T copy-mode-vi y                 send-keys -X copy-pipe-and-cancel "pbcopy"
+      '';
     };
 
     # modern vim
