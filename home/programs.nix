@@ -14,9 +14,6 @@
 
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
 
-    # terminal multiplexer
-    tmux
-
     # mobile shell: SSH replacement whose UDP session survives idle, sleep,
     # and network changes, so connections to the mini resume without
     # re-establishing them by hand. Installed on both ends (shared module),
@@ -53,6 +50,15 @@
   ];
 
   programs = {
+    # terminal multiplexer. mouse = true enables two-finger touchpad
+    # scrolling of the scrollback buffer (scroll up enters copy-mode).
+    # This must be set wherever tmux *runs* — i.e. the mini, which gets
+    # this shared home config too.
+    tmux = {
+      enable = true;
+      mouse = true;
+    };
+
     # modern vim
     neovim = {
       enable = true;
