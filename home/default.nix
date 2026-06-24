@@ -8,6 +8,7 @@
     ./git.nix
     ./ghostty.nix
     ./ssh.nix
+    ./remote-vm.nix
   ];
 
   # Home Manager needs a bit of information about you and the
