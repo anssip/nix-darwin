@@ -41,10 +41,10 @@
     php83Packages.composer
 
     pyenv
-  ] ++ lib.optionals (!lite) [
+
     # Rust
     rustup
-
+  ] ++ lib.optionals (!lite) [
     # database tools
     postgresql # PostgreSQL client utilities including psql
   ];
