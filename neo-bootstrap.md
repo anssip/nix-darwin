@@ -23,7 +23,7 @@ Here's the bootstrap sequence for a fresh macbook-neo:
   5. First switch — bootstraps nix-darwin itself + applies the lite profile
   make deploy-neo
   That runs sudo nix run nix-darwin -- switch --flake ./hosts/macbook-neo, which installs nix-darwin, builds the system closure (skipping
-  docker/emacs-mac/terraform/php/postgres per lite = true), and activates it. Subsequent updates: same make deploy-neo.
+  docker/terraform/php/postgres per lite = true), and activates it. Subsequent updates: same make deploy-neo.
 
   6. Tailscale auth (one-time) — the daemon will be running after the switch, but unauthenticated:
   sudo tailscale up

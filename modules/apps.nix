@@ -25,10 +25,6 @@
       # cleanup = "zap";
     };
 
-    taps = [
-      "railwaycat/emacsmacport"
-    ];
-
     brews = [
       "cmake"
       "flyctl" # fly.io CLI
@@ -38,10 +34,6 @@
     ] ++ lib.optionals (!lite) [
       "terraform"
       "php@8.2"
-      {
-        name = "railwaycat/emacsmacport/emacs-mac";
-        args = ["with-native-comp" "with-imagemagick" "with-xwidgets"];
-      }
     ];
 
     casks = [
