@@ -53,6 +53,7 @@
       inherit system specialArgs;
       modules = [
         ./modules/nix-core.nix
+        ./modules/overlays.nix
         ./modules/system.nix
         ./modules/apps.nix
         ./modules/tailscale.nix

@@ -55,6 +55,7 @@
         # so skip nix-core.nix and disable nix-darwin's Nix management.
         { nix.enable = false; }
 
+        ../../modules/overlays.nix
         ../../modules/system.nix
         ../../modules/apps.nix
         ../../modules/tailscale.nix
