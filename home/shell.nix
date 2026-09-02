@@ -23,10 +23,10 @@ in
       ];
     };
     initContent = ''
-      export PATH="$PATH:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin"
-      # On the MacBook, snowfox-env.sh only sets JAVA_HOME when unset, so this
-      # one wins.
-      export JAVA_HOME=/Applications/jdk-22.0.1.jdk/Contents/Home/
+      # Temurin 21 (homebrew cask) is the default JDK; jdk-22 stays on PATH
+      # as a fallback after it.
+      export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+      export PATH="$PATH:$JAVA_HOME/bin:/Applications/jdk-22.0.1.jdk/Contents/Home/bin:$HOME/bin"
 
       alias vapor="php $HOME/projects/easyconferencing/vendor/bin/vapor"
 
