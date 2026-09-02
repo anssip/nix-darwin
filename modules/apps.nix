@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    git-lfs
   ];
 
   homebrew = {
@@ -29,6 +30,7 @@
       "cmake"
       "flyctl" # fly.io CLI
       "gh" # Github CLI
+      "jira-cli" # Jira CLI (ankitpokhrel/jira-cli)
       "firebase-cli"
       "gemini-cli"
     ] ++ lib.optionals (!lite) [
@@ -42,6 +44,7 @@
       "ghostty"
     ] ++ lib.optionals (!lite) [
       "docker"
+      "temurin@21" # Eclipse Temurin JDK 21 (LTS)
     ];
   };
 }
