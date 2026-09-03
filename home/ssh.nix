@@ -37,6 +37,15 @@ in
       "mini" = {
         hostname = "anssis-macmini.tailcb0f0e.ts.net";
 
+        # The mini's account is `anssi` (see the root flake's `username`), but
+        # this laptop's is `anssipiirainen`, so ssh would otherwise default to
+        # a user that does not exist there. macOS sshd does not reject an
+        # unknown user cleanly — it runs the auth dance and then hangs up with
+        # a bare "Connection closed by ... port 22", which reads like a
+        # network fault rather than an auth one. Pinned here because the
+        # account name is a property of the mini, not of the local host.
+        user = "anssi";
+
         # Send a keepalive every 60s; give up only after ~5 missed replies.
         # This keeps idle sessions alive across NAT/router/Tailscale timeouts.
         serverAliveInterval = 60;
