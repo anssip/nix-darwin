@@ -40,6 +40,12 @@
     (pkgs.hiPrio prettier)
     php83Packages.composer
 
+    # spreadsheets / Google Sheets data wrangling:
+    # in2csv/csvcut/csvsql etc. convert & query xlsx/csv; qsv is a fast
+    # CSV toolkit (filter, join, sort, stats) built on the polars core.
+    csvkit
+    qsv
+
     pyenv
 
     # Rust
