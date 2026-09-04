@@ -36,6 +36,7 @@
     ] ++ lib.optionals (!lite) [
       "terraform"
       "php@8.2"
+      "docker-compose" # standalone docker-compose binary (Docker Desktop also provides `docker compose`)
     ];
 
     casks = [
