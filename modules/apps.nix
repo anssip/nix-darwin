@@ -34,6 +34,7 @@
       "jira-cli" # Jira CLI (ankitpokhrel/jira-cli)
       "firebase-cli"
       "gemini-cli"
+      "wireguard-tools" # WireGuard CLI (wg, wg-quick); pulls in wireguard-go for utun support
     ] ++ lib.optionals (!lite) [
       "terraform"
       "php@8.2"
