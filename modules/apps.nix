@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     git
     git-lfs
+    gws # Google Workspace CLI
   ];
 
   homebrew = {
