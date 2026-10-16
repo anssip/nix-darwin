@@ -62,6 +62,24 @@ in
           ControlPersist = "10m";
         };
       };
+
+      # AMA dev servers (see the ama-dev-servers skill). Both authenticate as
+      # `deployer` with the dev key; `ss` sits on a private VPC address, so it
+      # is reachable only by jumping through the public dev web host.
+      "sa" = {
+        # dev web host (user-api, admin-api, sports-api), public AWS address
+        hostname = "44.209.4.42";
+        user = "deployer";
+        identityFile = "~/.ssh/deployer-dev.pem";
+      };
+
+      "ss" = {
+        # dev services host (core-service, sports-service), private VPC IP
+        hostname = "172.31.63.116";
+        user = "deployer";
+        identityFile = "~/.ssh/deployer-dev.pem";
+        proxyJump = "sa";
+      };
     };
   };
 }

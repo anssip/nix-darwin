@@ -53,6 +53,7 @@
   ] ++ lib.optionals (!lite) [
     # database tools
     postgresql # PostgreSQL client utilities including psql
+    mariadb.client # MySQL-compatible client: mysql, mysqldump, mysqladmin
   ];
 
   programs = {

@@ -27,6 +27,10 @@
       # cleanup = "zap";
     };
 
+    taps = [
+      "jetbrains/utils" # required by the teamcity formula below
+    ];
+
     brews = [
       "cmake"
       "flyctl" # fly.io CLI
@@ -34,6 +38,7 @@
       "jira-cli" # Jira CLI (ankitpokhrel/jira-cli)
       "firebase-cli"
       "gemini-cli"
+      "jetbrains/utils/teamcity" # TeamCity CLI: builds, logs, agents, projects
       "wireguard-tools" # WireGuard CLI (wg, wg-quick); pulls in wireguard-go for utun support
     ] ++ lib.optionals (!lite) [
       "terraform"
@@ -45,6 +50,7 @@
       "keepassxc"
       "google-cloud-sdk"
       "ghostty"
+      "altair-graphql-client" # GraphQL API client
     ] ++ lib.optionals (!lite) [
       "docker"
       "temurin@21" # Eclipse Temurin JDK 21 (LTS)
