@@ -40,6 +40,7 @@
       "gemini-cli"
       "jetbrains/utils/teamcity" # TeamCity CLI: builds, logs, agents, projects
       "wireguard-tools" # WireGuard CLI (wg, wg-quick); pulls in wireguard-go for utun support
+      "opencode" # opencode AI coding agent CLI
     ] ++ lib.optionals (!lite) [
       "terraform"
       "php@8.2"
