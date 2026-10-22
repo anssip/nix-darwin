@@ -39,6 +39,7 @@
     pnpm
     (pkgs.hiPrio prettier)
     php83Packages.composer
+    laravel-cloud-cli # Laravel Cloud CLI: `cloud` ship/deploy/manage (from overlays.nix)
 
     # spreadsheets / Google Sheets data wrangling:
     # in2csv/csvcut/csvsql etc. convert & query xlsx/csv; qsv is a fast

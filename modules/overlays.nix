@@ -48,5 +48,48 @@
         };
       });
     })
+
+    # laravel-cloud-cli: the `cloud` command (https://cloud.laravel.com). Not
+    # in nixpkgs or Homebrew, so wrap the prebuilt phar upstream attaches to
+    # each GitHub release. The phar bundles all PHP dependencies but needs a
+    # PHP runtime: composer.json says ^8.3, but the shipped phar's platform
+    # check demands >= 8.4.1, hence php84 below.
+    #
+    # To bump: set the version below, then take the `digest` (sha256) of the
+    # `cloud` asset from
+    #   https://api.github.com/repos/laravel/cloud-cli/releases
+    # and convert it with `nix hash convert --hash-algo sha256 --to sri <sha256>`.
+    # (`cloud self-update` can't write into the nix store, so bumps happen here.)
+    (final: prev: {
+      laravel-cloud-cli = prev.stdenv.mkDerivation (finalAttrs: {
+        pname = "laravel-cloud-cli";
+        version = "0.7.0";
+
+        src = final.fetchurl {
+          url = "https://github.com/laravel/cloud-cli/releases/download/v${finalAttrs.version}/cloud";
+          hash = "sha256-G29ibk5oY2dL0+kJI6DNUcbXVud7nUt+EDglWhHLfvs=";
+        };
+
+        dontUnpack = true;
+
+        nativeBuildInputs = [ final.makeWrapper ];
+
+        installPhase = ''
+          runHook preInstall
+          install -Dm555 "$src" "$out/share/laravel-cloud-cli/cloud.phar"
+          makeWrapper "${final.php84}/bin/php" "$out/bin/cloud" \
+            --add-flags "$out/share/laravel-cloud-cli/cloud.phar"
+          runHook postInstall
+        '';
+
+        meta = {
+          description = "CLI to interact with Laravel Cloud";
+          homepage = "https://github.com/laravel/cloud-cli";
+          license = prev.lib.licenses.mit;
+          mainProgram = "cloud";
+          platforms = prev.lib.platforms.unix;
+        };
+      });
+    })
   ];
 }
