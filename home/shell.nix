@@ -73,6 +73,9 @@ in
   home.shellAliases = {
     ll = "ls -alh";
 
+    # rex CLI via the Versions/Current symlink so the alias survives app updates.
+    rex = "'/Users/anssi/Library/Application Support/com.superlogical.rex/RexServer/Versions/Current/Rex Server.app/Contents/MacOS/rex'";
+
     # mosh into the mini and attach (or create) a persistent tmux session,
     # so work survives disconnects/sleep. Plain `mosh mini` / `ssh mini`
     # remain untouched.
